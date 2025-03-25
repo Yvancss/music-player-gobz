@@ -7,9 +7,9 @@ class MusicPlayer {
     // TODO DRAGGABLE : On va vouloir ajouter une propriété "img" à chaque objet, et y inscrire le lien de l'image que l'on veut charger. 
     // Pense bien à mettre tes images dans le dossier "public"
     this.tracks = [
-      { id: 1, title: "Chill Vibes", url: "track.mp4" },
-      { id: 2, title: "Summer Beats", url: "track2.mp3" },
-      { id: 3, title: "Lo-Fi Relax", url: "track3.mp3" }
+      { id: 1, title: "Sensation", url: "./houdi-sensation.mp3" },
+      { id: 2, title: "boiserie", url: "./paf.mp3" },
+      { id: 3, title: "boulette", url: "./boulette.mp3" }
     ];
     this.currentTrackIndex = 0; // Bug: En général, les tableaux commencent à 0
     this.audio = new Audio();
@@ -17,9 +17,6 @@ class MusicPlayer {
     this.volume = 1.2; // BUG: C'est trop fort 
     this.init();
   }
-
-
-
 
   // Explication : Ici, on est en dehors du constructor, on y défini toutes les fonctions que la classe possède.
 
@@ -63,9 +60,13 @@ this.trackTitle.textContent = this.tracks[this.currentTrackIndex].title;
 // this.animateTitle();
   }
 togglePlay() {
-  if (isPlaying) { // BUG : La référence de isPlaying semble ne pas fonctionner, c'est un membre de classe, il faut un mot clef pour pointer dessus.
+  console.log(this.isPlaying)
+  if (this.isPlaying) { // BUG : La référence de isPlaying semble ne pas fonctionner, c'est un membre de classe, il faut un mot clef pour pointer dessus.
+    this.isPlaying = false
     this.audio.pause();
   } else {
+    this.isPlaying = true
+    
     this.audio.play().catch(err => console.error("Erreur de lecture :", err));
   }
 }
@@ -86,6 +87,7 @@ prevTrack() {
   this.audio.play();
   this.isPlaying = true;
 }
+
 
   // setupDraggable() {
   //     if (typeof gsap !== "undefined" && gsap.Draggable) {
@@ -114,6 +116,9 @@ prevTrack() {
   //     }
   // }
 }
+
+new MusicPlayer()
+
 
 
 // BUG : Ici, on est en dehors de la classe Music Player. 

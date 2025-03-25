@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
+  background-color: #1F1F1F;
 }
 
 ul {
@@ -15,19 +17,55 @@ li {
 button {
   cursor: pointer;
   padding: 5px;
+  background-color: transparent;
+  border: transparent;
+  
 }
 
-#play,
-#next,
-#prev {
-  margin: 10px;
-  padding: 10px;
+
+
+.lecteur{
+  font-family: "Inter", sans-serif;
+  color: aliceblue;
+width: 500px;
+border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.118);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  
 }
 
-#track-title {
-  font-weight: bold;
-  margin-top: 20px;
+#track-title{
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: aliceblue;  
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+
+#track-artist{
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+font-size: 15px;
+  color: aliceblue;  
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.nav{
+display: flex;
+align-items: center;
+}
+
+
 
 .hidden {
   display: none;
@@ -46,4 +84,40 @@ button {
   background: red;
   position: absolute;
   cursor: pointer;
+}
+
+svg{
+  width: 25px;
+  height: 25px;
+  fill: aliceblue;
+}
+
+#icon-avant {
+  transform: rotate(180deg);
+  fill: aliceblue;
+
+}
+#play:hover #icon-avant{
+  fill: rgba(240, 248, 255, 0.19);
+  }
+
+
+
+#play:hover #icon-play{
+fill: rgba(240, 248, 255, 0.19);
+}
+
+.Houdi-img{
+ 
+height: 450x;
+width: 450px;
+border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.118);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
